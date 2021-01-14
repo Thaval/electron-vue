@@ -63,10 +63,10 @@ header{
 footer {
   height: 44px !important;
 }
-
+ */
  main {
     height: calc(100% - 48px - 44px);
-  } */
+  }
 
 v-main {
   height: 100%;

@@ -32,29 +32,4 @@ export default class TabCodeEditors extends Vue {
 </script>
 <style>
 
-/* .v-window-item{
-    height: 100% !important;
-}
-
-.v-window__container{
-    height: 100% !important;
-} */
-
-.tab-items-row >>> .v-window__container,
-.tab-items-row >>> .v-window-item {
-  height: 100% !important;
-}
-
-.v-window__container{
-    height:100% !important;
-}
-
-.v-window{
-  flex: 1;
-}
-
-.v-window-item{
-    height: 100% !important;
-}
-
 </style>
