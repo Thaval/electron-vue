@@ -1,32 +1,78 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <!-- <v-navigation-drawer app>
+  </v-navigation-drawer> -->
+    <main-navigation />
+    <Topbar />
+
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+      <!-- Provides the application the proper gutter -->
+      <v-container class="d-flex flex-column">
+        <!-- If using vue-router -->
+        <!-- <router-view></router-view> -->
+        <tab-code-editors class="flex-grow-1" />
+        <tab-tools class="flex-grow-0" />
+      </v-container>
+    </v-main>
+
+    <v-footer app>
+      <footerbar />
+    </v-footer>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script lang="ts">
+import Vue from "vue";
+import Topbar from "@/components/Topbar.vue"; // @ is an alias to /src
+import MainNavigation from "@/components/MainNavigation.vue"; // @ is an alias to /src
+import Footerbar from "@/components/Footerbar.vue"; // @ is an alias to /src
+import TabCodeEditors from "@/components/TabCodeEditors.vue"; // @ is an alias to /src
+import TabTools from "@/components/TabTools.vue"; // @ is an alias to /src
+
+export default Vue.extend({
+  name: "App",
+
+  components: {
+    Topbar,
+    MainNavigation,
+    Footerbar,
+    TabCodeEditors,
+    TabTools,
+  },
+});
+</script>
+
+<style>
+/* html {
+  overflow: hidden;
 }
 
-#nav {
-  padding: 30px;
+body {
+  overflow: hidden;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.application {
+  height: 100%;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+header{
+  height: 48px !important;
+}
+
+footer {
+  height: 44px !important;
+}
+
+ main {
+    height: calc(100% - 48px - 44px);
+  } */
+
+v-main {
+  height: 100%;
+}
+
+.v-main__wrap > * {
+  height: 100% !important;
 }
 </style>
