@@ -1,9 +1,6 @@
 <template>
   <v-app-bar dense app clipped-left>
        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <!-- <v-toolbar-title>Page title</v-toolbar-title> -->
-
       <v-spacer></v-spacer>
 
       <v-btn icon>

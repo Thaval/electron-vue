@@ -1,16 +1,16 @@
 <template>
-  <v-container class="d-flex flex-column">
+  <div class="d-flex flex-column overflow-h">
     <v-tabs v-model="tab" background-color="primary" dark class="flex-grow-0">
       <v-tab v-for="item in tabs" :key="item.header">
         {{ item.header }}
       </v-tab>
     </v-tabs>
-    <v-tabs-items v-model="tab" class="flex-grow-1">
+    <v-tabs-items v-model="tab" class="flex-grow-1 overflow-a">
       <v-tab-item v-for="item in tabs" :key="item.header">
         <code-editor :content="item.content" />
       </v-tab-item>
     </v-tabs-items>
-  </v-container>
+  </div>
 </template>
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
@@ -31,5 +31,11 @@ export default class TabCodeEditors extends Vue {
 }
 </script>
 <style>
+.overflow-h {
+  overflow: hidden;
+}
 
+.overflow-a {
+  overflow: auto;
+}
 </style>

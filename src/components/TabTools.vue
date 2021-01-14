@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <v-tabs v-model="tab" background-color="primary" dark>
       <v-tab v-for="item in tabs" :key="item.header">
         {{ item.header }}
@@ -14,7 +14,7 @@
         </v-card>
       </v-tab-item>
     </v-tabs-items>
-  </v-container>
+  </div>
 </template>
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";

@@ -1,7 +1,7 @@
 <template>
-  <v-navigation-drawer app clipped permanent>
-    <v-treeview dense activatable rounded hoverable :items="items"></v-treeview>
-  </v-navigation-drawer>
+  <!-- <v-navigation-drawer app clipped permanent> -->
+    <v-treeview :items="items"></v-treeview>
+  <!-- </v-navigation-drawer> -->
 </template>
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";

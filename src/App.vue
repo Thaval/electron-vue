@@ -1,16 +1,10 @@
 <template>
   <v-app>
-    <!-- <v-navigation-drawer app>
-  </v-navigation-drawer> -->
-    <main-navigation />
-    <Topbar />
+    <!-- <main-navigation />
+    <topbar />
 
-    <!-- Sizes your content based upon application components -->
     <v-main>
-      <!-- Provides the application the proper gutter -->
       <v-container class="d-flex flex-column">
-        <!-- If using vue-router -->
-        <!-- <router-view></router-view> -->
         <tab-code-editors class="flex-grow-1" />
         <tab-tools class="flex-grow-0" />
       </v-container>
@@ -18,7 +12,25 @@
 
     <v-footer app>
       <footerbar />
-    </v-footer>
+    </v-footer> -->
+    <base-layout>
+      <div class="d-flex flex-column main-container">
+        <tab-code-editors class="flex-grow-1" />
+        <tab-tools class="flex-grow-0" />
+      </div>
+
+      <template v-slot:header>
+        <topbar />
+      </template>
+
+      <template v-slot:nav>
+        <main-navigation />
+      </template>
+
+      <template v-slot:footer>
+        <footerbar />
+      </template>
+    </base-layout>
   </v-app>
 </template>
 
@@ -29,6 +41,7 @@ import MainNavigation from "@/components/MainNavigation.vue"; // @ is an alias t
 import Footerbar from "@/components/Footerbar.vue"; // @ is an alias to /src
 import TabCodeEditors from "@/components/TabCodeEditors.vue"; // @ is an alias to /src
 import TabTools from "@/components/TabTools.vue"; // @ is an alias to /src
+import BaseLayout from "@/layout/BaseLayout.vue"; // @ is an alias to /src
 
 export default Vue.extend({
   name: "App",
@@ -39,12 +52,13 @@ export default Vue.extend({
     Footerbar,
     TabCodeEditors,
     TabTools,
+    BaseLayout,
   },
 });
 </script>
 
 <style>
-/* html {
+html {
   overflow: hidden;
 }
 
@@ -52,6 +66,7 @@ body {
   overflow: hidden;
 }
 
+/*
 .application {
   height: 100%;
 }
@@ -64,9 +79,9 @@ footer {
   height: 44px !important;
 }
  */
- main {
-    height: calc(100% - 48px - 44px);
-  }
+main {
+  height: calc(100% - 48px - 44px);
+}
 
 v-main {
   height: 100%;
@@ -75,4 +90,9 @@ v-main {
 .v-main__wrap > * {
   height: 100% !important;
 }
+
+.main-container {
+  margin: 0px;
+}
+
 </style>
